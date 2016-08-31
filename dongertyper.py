@@ -1,10 +1,12 @@
-import gi, os, sys
+#! /usr/bin/python3
+
+import gi, os, sys, xerox
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk, Gdk
 
-
 class FlowBoxWindow(Gtk.Window):
-
+    # You can manually add emotes by putting them in donglist.txt.
+    # Put just one for each line.
     dongerfile = open(os.path.join(sys.path[0], "donglist.txt"), "r")
     dongerlist = dongerfile.read().splitlines()
 
@@ -36,9 +38,7 @@ class FlowBoxWindow(Gtk.Window):
 
     def on_donger_clicked(self, button, donger):
         """Links each button to a donger in the clipboard."""
-        dongclip = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
-        dongclip.set_text(donger, -1)
-        dongclip.store()
+        xerox.copy(donger)
         Gtk.main_quit()
 
     def create_flowbox(self, flowbox):
