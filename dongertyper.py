@@ -1,21 +1,22 @@
-#! /usr/bin/python3
+#!/usr/bin/env python3
 
-import gi, os, sys, xerox
+import gi
+import os
+import sys
+import xerox
 gi.require_version('Gtk', '3.0')
-from gi.repository import Gtk, Gdk
+from gi.repository import Gtk
+from gi.repository import Gdk
+
 
 class FlowBoxWindow(Gtk.Window):
-    # You can manually add emotes by putting them in donglist.txt.
-    # Put just one for each line.
-    dongerfile = open(os.path.join(sys.path[0], "donglist.txt"), "r")
-    dongerlist = dongerfile.read().splitlines()
 
     def __init__(self):
         Gtk.Window.__init__(self, title="FlowBox Demo")
         self.set_border_width(10)
         self.set_default_size(300, 250)
 
-        header = Gtk.HeaderBar(title="DongerTyper v.0.1a")
+        header = Gtk.HeaderBar(title="DongerTyper v.0.1b")
         header.set_subtitle("ヽ༼ຈل͜ຈ༽ﾉ raise your dongers ヽ༼ຈل͜ຈ༽ﾉ")
         header.props.show_close_button = True
 
@@ -43,7 +44,12 @@ class FlowBoxWindow(Gtk.Window):
 
     def create_flowbox(self, flowbox):
         """Adds each donger to a button."""
-        for donger in self.dongerlist:
+        # You can manually add emotes by putting them in donglist.txt.
+        # Put just one for each line.
+        dongerfile = open(os.path.join(sys.path[0], "donglist.txt"), "r")
+        dongerlist = dongerfile.read().splitlines()
+        dongerfile.close()
+        for donger in dongerlist:
             button = Gtk.Button.new_with_label(donger)
             button.connect("clicked", self.on_donger_clicked, donger)
             flowbox.add(button)
