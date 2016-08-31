@@ -7,6 +7,8 @@
 
 ## Install
 
+
+### For Linux/Mac
 There's no install required. I might look into how to make it a standalone executable. For now just clone the repository and execute DongerTyper with Python.
 
 ```
@@ -14,6 +16,10 @@ python3 /route/to/dongertyper.py
 ```
 
 **Also be sure that you have dongerlist.txt in the same directory as the python script. If you want to have them separated, you'll have to edit the script.**
+
+### For Windows
+
+(ಥ﹏ಥ) Sorry guys, I don't know how to use this in windows. I guess you'll have to install python3.5 and gtk. I'll research more about it tomorrow.
 
 ## Usage
 
