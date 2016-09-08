@@ -19,7 +19,7 @@ python3 /route/to/dongertyper.py
 
 ### For Windows
 
-(ಥ﹏ಥ) Sorry guys, I don't know how to use this in windows. I guess you'll have to install python3.5 and gtk. I'll research more about it tomorrow.
+(ಥ﹏ಥ) Sorry guys, I don't know how to use this in windows. I guess you'll have to install python3.5 and gtk. I'll research more about it some day, I promise.
 
 ## Usage
 
